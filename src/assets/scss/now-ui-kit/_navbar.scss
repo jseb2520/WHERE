@@ -1,6 +1,7 @@
 .navbar{
     padding-top: $navbar-padding-base;
     padding-bottom: $navbar-padding-base;
+    font-weight: $font-weight-semi;
     min-height: 53px;
     margin-bottom: 20px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
@@ -101,7 +102,7 @@
 
     .navbar-brand{
         text-transform: uppercase;
-        font-size: $font-size-small;
+        font-size: $font-size-large-navbar;
         padding-top: $padding-base-vertical;
         padding-bottom: $padding-base-vertical;
         line-height: $line-height-nav-link;
@@ -177,6 +178,10 @@
 
 .bg-primary{
     background-color: $primary-color !important;
+}
+
+.bg-accent{
+    background-color: $accent-color !important;
 }
 
 .bg-info{

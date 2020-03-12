@@ -108,8 +108,8 @@
         display: none;
     }
 
-    &[filter-color="orange"]{
-        @include linear-gradient(rgba($black-color,.20), rgba(224, 23, 3, 0.6));
+    &[filter-color="black"]{
+        @include linear-gradient(rgba($black-color,.30), rgb(0, 0, 0));
     }
 }
 
@@ -304,6 +304,9 @@
 }
 [data-background-color="black"]{
     background-color: $black-color;
+}
+[data-background-color="accent"]{
+    background-color: $accent-states-color;
 }
 
 [data-background-color]:not([data-background-color="gray"]){
