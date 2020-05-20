@@ -1,0 +1,21 @@
+@import "../../assets/theme/theme";
+
+.container-item-sidebar {
+  background-color: #000;
+  width : 180px - map-get($dimensions, "margin");
+  height: auto;
+  display: flex;
+  &:hover {
+    cursor: pointer;
+  }
+
+  .container-item-sidebar-icon, .container-item-sidebar-text {
+    @include headline6;
+    padding: map-get($space, "space-xs");
+  };
+
+  .text {
+    width : 150px;
+    color : #FFF;
+  };
+}

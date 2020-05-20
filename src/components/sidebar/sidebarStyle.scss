@@ -1,0 +1,14 @@
+@import "../../assets/theme/theme";
+
+.container-sidebar {
+  background-color: #000;
+  width : 180px;
+  .container-links {
+    position : fixed;
+    height : 100%;
+    display: flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : stretch
+  }
+}
