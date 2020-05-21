@@ -17,7 +17,6 @@ export default function HomeView(props) {
   return (
     <div className = "container-home">
       <SidebarComponent
-        text = {'Hola'}
         width = {props.widthPanel}
         fontSize = {props.fontSizePanel}
         buttonTogglePanel = {buttonTogglePanel}

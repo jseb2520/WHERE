@@ -5,20 +5,27 @@ import HomeView from './HomeView'
 
 export default function HomeContainer(props) {
 
+  const MIN_FONT = 0
+  const MAX_FONT = 21
+  const MAX_WIDTH_PANEL = 180
+  const MIN_WIDTH_PANEL = 50
+  const ANIMATE_TEXT_DURATION = 250
+  const ANIMATE_PANEL_DURATION = 150
+
   let [panel, setPanel] = useState(true)
   const animatePanelRef = useRef()
   const animatePanel = useSpring({ 
-    config: { duration: 250, ease: 'expIn' },
+    config: { duration: ANIMATE_PANEL_DURATION, ease: 'expOut' },
     ref: animatePanelRef,
-    width: panel ? 180 : 42,
-    marginLeft: panel ? 180 : 42,
+    width: panel ? MAX_WIDTH_PANEL : MIN_WIDTH_PANEL,
+    marginLeft: panel ? MAX_WIDTH_PANEL : MIN_WIDTH_PANEL,
   })
   const animateTextPanelRef = useRef()
 
   const animateTextPanel = useSpring({
-    config: { duration: 300, ease: 'expIn' },
+    config: { duration: ANIMATE_TEXT_DURATION, ease: 'expIn' },
     ref: animateTextPanelRef,
-    fontSize : panel ? 21 : 0 
+    fontSize : panel ? MAX_FONT : MIN_FONT
   })
 
   useChain(panel ? [animatePanelRef, animateTextPanelRef ]: [animateTextPanelRef, animatePanelRef])
