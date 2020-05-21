@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import {animated} from 'react-spring'
 import './contentStyle.scss';
 
 export default function ContentComponent(props) {
   return (
-    <div className = "container-content">
+    <animated.div className = "container-content" style = {{marginLeft: props.margin}}>
       {props.text}
-    </div>
+    </animated.div>
   )
 }
 

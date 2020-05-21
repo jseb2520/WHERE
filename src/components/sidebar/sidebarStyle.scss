@@ -3,12 +3,33 @@
 .container-sidebar {
   background-color: #000;
   width : 180px;
+  position : fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  display : flex;
+  flex-direction: column;
+  margin-top: map-get($map: $space, $key: 'space-sm');
+  margin-bottom: map-get($map: $space, $key: 'space-sm');
+  .container-toggle-panel {
+    @include headline6;
+    padding: map-get($space, "space-xs");
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    color : map-get($map: $colors, $key: 'white');
+    &:hover {
+      cursor: pointer;
+    }
+    .icon-toggle-panel {
+      color : map-get($map: $colors, $key: white)
+    }
+  }
   .container-links {
-    position : fixed;
     height : 100%;
     display: flex;
     flex-direction : column;
     justify-content : center;
-    align-items : stretch
+    align-items : stretch;
   }
 }

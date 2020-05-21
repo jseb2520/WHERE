@@ -1,12 +1,14 @@
 import React, {useState} from 'react'
 import PropTypes from 'prop-types';
-import Icon, {
+import {animated} from 'react-spring'
+import {
   HomeOutlined,
   ToolOutlined,
   ShoppingOutlined,
   RocketOutlined,
   TeamOutlined,
 } from '@ant-design/icons'
+import Colors from '../../assets/theme/colors'
 import './itemSidebarStyle.scss';
 
 
@@ -18,23 +20,23 @@ export default function ItemSidebarComponent(props) {
     let iconComponent
     switch(namePage) {
       case 'Home' : {
-        iconComponent = <HomeOutlined style={{ fontSize: '21px', color: hover? "green" : "red" }}/>
+        iconComponent = <HomeOutlined className="icon-item-sidebar"/>
         break
       }
       case 'Services' : {
-        iconComponent = <ToolOutlined style={{ fontSize: '21px', color: hover? "green" : "red"  }}/>
+        iconComponent = <ToolOutlined className="icon-item-sidebar"/>
         break
       }
       case 'Products' : {
-        iconComponent = <ShoppingOutlined style={{ fontSize: '21px',color: hover? "green" : "red" }}/>
+        iconComponent = <ShoppingOutlined className="icon-item-sidebar"/>
         break
       }
       case 'Projects' : {
-        iconComponent = <RocketOutlined style={{ fontSize: '21px', color: hover? "green" : "red"  }}/>
+        iconComponent = <RocketOutlined className="icon-item-sidebar"/>
         break
       }
       case 'About us' : {
-        iconComponent = <TeamOutlined style={{ fontSize: '21px', color: hover? "green" : "red"  }}/>
+        iconComponent = <TeamOutlined className="icon-item-sidebar"/>
         break
       }
       default : return null
@@ -43,7 +45,7 @@ export default function ItemSidebarComponent(props) {
   }
 
   const toggleHover = () => {
-    setHover(!hover)
+    //setHover(!hover)
   }
   return (
     <a 
@@ -55,7 +57,7 @@ export default function ItemSidebarComponent(props) {
         {getIcon(props.namePage)}
       </div>
       <div className = "container-item-sidebar-text">
-        <span className = "text" style = {{color: hover? "green" : "red"  }}>{props.namePage}</span>
+        <animated.span className = "text" style = {{fontSize: props.fontSize}}>{props.namePage}</animated.span>
       </div>
     </a>
   )
@@ -63,10 +65,8 @@ export default function ItemSidebarComponent(props) {
 
 ItemSidebarComponent.defaultProps = {
   namePage: 'Hello World',
-  icon : '?'
 }
 
 ItemSidebarComponent.propTypes = {
   namePage : PropTypes.string,
-  icon : PropTypes.string
 }

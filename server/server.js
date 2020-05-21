@@ -4,7 +4,7 @@ import path from 'path'
 
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
-import HomeContainer from '../src/containers/HomeContainer'
+import HomeContainer from '../src/views/home/HomeContainer'
 
 const app = Express()
 

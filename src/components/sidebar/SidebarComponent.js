@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import {animated} from 'react-spring'
 import './sidebarStyle.scss';
 import ItemSidebarComponent from '../itemSidebar/ItemSidebarComponent'
 
 
 export default function SidebarComponent(props) {
+  console.log(props.width)
 
   const links = [
     {
@@ -12,6 +14,9 @@ export default function SidebarComponent(props) {
     },
     {
       namePage : 'Services',
+    },
+    {
+      namePage : 'Products',
     },
     {
       namePage : 'Projects',
@@ -22,12 +27,14 @@ export default function SidebarComponent(props) {
   ]
 
   return (
-    <div className = "container-sidebar">
+    <animated.div className = "container-sidebar" style={{width: props.width}}>
+      {props.buttonTogglePanel}
       <div className = "container-links">
       {
         links.map(link => {
           return (
             <ItemSidebarComponent
+              fontSize = {props.fontSize}
               namePage = {link.namePage}
               icon = {link.icon}
             />
@@ -35,7 +42,7 @@ export default function SidebarComponent(props) {
         })
       }
       </div>
-    </div>
+    </animated.div>
   )
 }
 
