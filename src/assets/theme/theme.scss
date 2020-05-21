@@ -67,8 +67,9 @@ $transition : (
 );
 
 $dimensions : (
-	margin : 24px,
-	padding : 24px,
+  smallIcon : 0.5 * $space-unit,
+  regularIcon : $space-unit,
+  bigIcon : 3.25 * $space-unit,
 	bigBorderRadius : 16px,
 	regularBorderRadius : 8px,
 	smallBorderRadius : 4px,
@@ -88,11 +89,15 @@ $space : (
 
 
 $colors : (
-  primaryColor : #fFf,
-  warningColor : #ff9800,
-  dangerColor : #f44336,
-  successColor : #4caf50,
-  infoColor : #00acc1,
-  roseColor : #e91e63,
-  grayColor : #999999,
+  primary: #000000,
+  primary-light: #4D4D4D,
+  primary-lighter:#999999,
+  white: #ffffff,
+  accent: #E9B418,
+  accent-light:  #FFEFBF,
+  accent-dark: #9C7810,
+  //Gray 
+  lightGray	: #E0E0E0,
+  darkGray	: #424242,
+  gray	: #757575
 );

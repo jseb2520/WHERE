@@ -3,6 +3,10 @@
 .container-content {
   background-color: #FFF;
   padding: map-get($map: $space, $key: 'space-sm');
+  margin-top: map-get($map: $space, $key: 'space-sm');
+  margin-bottom: map-get($map: $space, $key: 'space-sm');
+  margin-right: map-get($map: $space, $key: 'space-sm');
+  margin-left: 180px;
   width : 100%;
   height: 100vh;
   border-radius : map-get($map: $dimensions, $key: "bigBorderRadius");

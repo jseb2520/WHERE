@@ -2,10 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ContentComponent from './ContentComponent'
 
-export default function ContentContainer() {
+export default function ContentContainer(props) {
   //Here all methods and state
   return (
-    <ContentComponent/>
+    <ContentComponent
+      margin = {props.margin}
+    />
   )
 }
 

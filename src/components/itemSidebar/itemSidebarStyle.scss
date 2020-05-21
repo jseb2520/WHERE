@@ -2,20 +2,25 @@
 
 .container-item-sidebar {
   background-color: #000;
-  width : 180px - map-get($dimensions, "margin");
+  width : calc(180px - map-get($space, "space-sm"));
   height: auto;
   display: flex;
-  &:hover {
+  &:hover{
+    .container-item-sidebar-icon {
+      color: map-get($map: $colors, $key: gray);
+      padding-left: map-get($space, "space-sm");
+    }
+    .container-item-sidebar-text {
+      color: map-get($map: $colors, $key: gray);
+      padding-left: map-get($space, "space-sm");
+    }
     cursor: pointer;
   }
 
   .container-item-sidebar-icon, .container-item-sidebar-text {
     @include headline6;
+    color: map-get($map: $colors, $key: darkGray);
     padding: map-get($space, "space-xs");
-  };
-
-  .text {
-    width : 150px;
-    color : #FFF;
+    transition: all 0.3s ease-out;
   };
 }
