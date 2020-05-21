@@ -1,0 +1,10 @@
+@import "../../assets/theme/theme";
+
+.container-content {
+  background-color: #FFF;
+  padding: map-get($map: $space, $key: 'space-sm');
+  width : 100%;
+  height: 100vh;
+  border-radius : map-get($map: $dimensions, $key: "bigBorderRadius");
+  z-index: 100;
+}
