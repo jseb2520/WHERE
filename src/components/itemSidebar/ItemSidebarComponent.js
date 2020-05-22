@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types';
 import {animated} from 'react-spring'
 import {
@@ -8,13 +8,13 @@ import {
   RocketOutlined,
   TeamOutlined,
 } from '@ant-design/icons'
-import Colors from '../../assets/theme/colors'
+// import Colors from '../../assets/theme/colors'
 import './itemSidebarStyle.scss';
 
 
 export default function ItemSidebarComponent(props) {
 
-  let [hover, setHover] = useState(false)
+  // let [hover, setHover] = useState(false)
 
   const getIcon = (namePage) => {
     let iconComponent
@@ -51,7 +51,8 @@ export default function ItemSidebarComponent(props) {
     <a 
       className = "container-item-sidebar"
       onMouseEnter = {toggleHover} 
-      onMouseLeave = {toggleHover} 
+      onMouseLeave = {toggleHover}
+      href='#pablo'
     >
       <div className = "container-item-sidebar-icon">
         {getIcon(props.namePage)}

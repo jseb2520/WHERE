@@ -6,7 +6,6 @@ import ItemSidebarComponent from '../itemSidebar/ItemSidebarComponent'
 
 
 export default function SidebarComponent(props) {
-  console.log(props.width)
 
   const links = [
     {
@@ -31,9 +30,10 @@ export default function SidebarComponent(props) {
       {props.buttonTogglePanel}
       <div className = "container-links">
       {
-        links.map(link => {
+        links.map((link,i) => {
           return (
             <ItemSidebarComponent
+              key={i}
               fontSize = {props.fontSize}
               namePage = {link.namePage}
               icon = {link.icon}
