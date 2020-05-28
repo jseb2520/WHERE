@@ -1,0 +1,103 @@
+// ##############################
+// // // Variables - Styles that are used on more than one component
+// #############################
+
+//Fonts
+@import '../fonts/fonts.scss';
+
+@mixin headline1 {
+  font-family: unquote("Lato-Regular");
+  font-size: 101px;
+};
+@mixin headline2 {
+  font-family: unquote("Lato-Regular");
+  font-size: 63px;
+};
+@mixin headline3 {
+  font-family: unquote("Lato-Regular");
+  font-size: 50px;
+};
+@mixin headline4 {
+  font-family: unquote("Lato-Regular");
+  font-size: 36px;
+};
+@mixin headline5 {
+  font-family: unquote("Lato-Regular");
+  font-size: 25px;
+};
+@mixin headline6 {
+  font-family: unquote("Lato-Regular");
+  font-size: 21px;
+};
+@mixin body1 {
+  font-family: unquote("Lato-Regular");
+  font-size: 17px;
+};
+@mixin body2 {
+  font-family: unquote("Lato-Regular");
+  font-size: 15px;
+};
+@mixin subtitle1 {
+  font-family: unquote("Lato-Regular");
+  font-size: 17px;
+};
+@mixin subtitle2 {
+  font-family: unquote("Lato-Regular");
+  font-size: 15px;
+};
+@mixin button {
+  font-family: unquote("Lato-Regular");
+  font-size: 15px;
+};
+@mixin overline {
+  font-family: unquote("Lato-Regular");
+  font-size: 10px;
+};
+@mixin caption {
+  font-family: unquote("Lato-Regular");
+  font-size: 13px;
+};
+
+
+$drawerWidth : 260;
+$space-unit: 1em;
+
+$transition : (
+	transition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)'
+);
+
+$dimensions : (
+  smallIcon : 0.5 * $space-unit,
+  regularIcon : $space-unit,
+  bigIcon : 3.25 * $space-unit,
+	bigBorderRadius : 16px,
+	regularBorderRadius : 8px,
+	smallBorderRadius : 4px,
+);
+
+
+$space : (
+  space-xxs: 0.25 * $space-unit,
+  space-xs:  0.5 * $space-unit,
+  space-sm:  0.75 * $space-unit,
+  space-md:  1.25 * $space-unit,
+  space-lg:  2 * $space-unit,
+  space-xl:  3.25 * $space-unit,
+  space-xxl: 5.25 * $space-unit,
+);
+
+
+
+$colors : (
+  primary: #000000,
+  primary-light: #4D4D4D,
+  primary-lighter:#999999,
+  white: #ffffff,
+  accent: #E9B418,
+  accent-light:  #FFEFBF,
+  accent-dark: #9C7810,
+  //Gray 
+  lightGray	: #E0E0E0,
+  darkGray	: #424242,
+  gray	: #757575
+);
