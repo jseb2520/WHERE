@@ -2,25 +2,24 @@
 
 .container-item-sidebar {
   background-color: #000;
-  width : calc(180px - map-get($space, "space-sm"));
+  width : calc(180px - var(--space-sm));
   height: auto;
   display: flex;
   &:hover{
     .container-item-sidebar-icon {
-      color: map-get($map: $colors, $key: gray);
-      padding-left: map-get($space, "space-sm");
+      color: var(--light-text2);
+      padding-left: var(--space-sm);
     }
     .container-item-sidebar-text {
-      color: map-get($map: $colors, $key: gray);
-      padding-left: map-get($space, "space-sm");
+      color: var(--light-text2);
+      padding-left: var(--space-sm);
     }
     cursor: pointer;
   }
 
   .container-item-sidebar-icon, .container-item-sidebar-text {
-    @include headline6;
-    color: map-get($map: $colors, $key: darkGray);
-    padding: map-get($space, "space-xs");
+    color: var(--light-text3);
+    padding: var(--space-xs);
     transition: all 0.3s ease-out;
   };
 }
