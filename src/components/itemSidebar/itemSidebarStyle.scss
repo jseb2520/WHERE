@@ -1,0 +1,25 @@
+@import "../../assets/theme/theme";
+
+.container-item-sidebar {
+  background-color: #000;
+  width : calc(180px - var(--space-sm));
+  height: auto;
+  display: flex;
+  &:hover{
+    .container-item-sidebar-icon {
+      color: var(--light-text2);
+      padding-left: var(--space-sm);
+    }
+    .container-item-sidebar-text {
+      color: var(--light-text2);
+      padding-left: var(--space-sm);
+    }
+    cursor: pointer;
+  }
+
+  .container-item-sidebar-icon, .container-item-sidebar-text {
+    color: var(--light-text3);
+    padding: var(--space-xs);
+    transition: all 0.3s ease-out;
+  };
+}

@@ -1,0 +1,154 @@
+// ##############################
+// // // Variables - Styles that are used on more than one component
+// #############################
+
+//Fonts
+@import '../fonts/fonts.scss';
+
+/* 
+ * VARIABLES ______________________________________________________________________________
+ */ 
+
+$drawer-width : 180px;
+$border-radius-xs : 4px;
+$border-radius-sm : 8px;
+$border-radius-md : 12px;
+$border-radius-lg : 20px;
+
+:root{
+  // #############################
+  //Dimensions 
+  --drawer-width : 180px;
+  --border-radius-xs : 4px;
+  --border-radius-sm : 8px;
+  --border-radius-md : 12px;
+  --border-radius-lg : 20px;
+
+
+  // #############################
+  //Spacing 
+  --space-unit:  1.1em;
+  --space-xxxxs: calc(0.125 * var(--space-unit)); 
+  --space-xxxs:  calc(0.25 * var(--space-unit));
+  --space-xxs:   calc(0.375 * var(--space-unit));
+  --space-xs:    calc(0.5 * var(--space-unit));
+  --space-sm:    calc(0.75 * var(--space-unit));
+  --space-md:    calc(1.25 * var(--space-unit));
+  --space-lg:    calc(2 * var(--space-unit));
+  --space-xl:    calc(3.25 * var(--space-unit));
+  --space-xxl:   calc(5.25 * var(--space-unit));
+  --space-xxxl:  calc(8.5 * var(--space-unit));
+  --space-xxxxl: calc(13.75 * var(--space-unit));
+
+  // #############################
+  //FontSize 
+  // body font size
+  --text-base-size: 1em;
+  
+  // type scale
+  --text-scale-ratio: 1.2;
+  --text-xs: calc((1em / var(--text-scale-ratio)) / var(--text-scale-ratio));
+  --text-sm: calc(var(--text-xs) * var(--text-scale-ratio));
+  --text-md: calc(var(--text-sm) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-lg: calc(var(--text-md) * var(--text-scale-ratio));
+  --text-xl: calc(var(--text-lg) * var(--text-scale-ratio));
+  --text-xxl: calc(var(--text-xl) * var(--text-scale-ratio));
+  --text-xxxl: calc(var(--text-xxl) * var(--text-scale-ratio));
+
+  // #############################
+  //Colors 
+  //Corporative
+  --primary: #000000;
+  --primary-light: #4D4D4D;
+  --primary-lighter:#999999;
+  --accent: #E9B418;
+  --accent-light:  #FFEFBF;
+  --accent-dark: #9C7810;
+  //Gray 
+  --light-gray	: #E0E0E0;
+  --dark-gray	: #424242;
+  --gray	: #757575;
+  //Text
+  //In light surfaces:
+  --dark-text1: #485160;
+  --dark-text2: #8A989E;
+  //In dark surfaces:
+  --light-text1: #E3E7EE;
+  --light-text2: #8A989E;
+  --light-text3: #424546;
+  //Surface
+  //light surfaces
+  --light-surface1: #ffffff;
+  --light-surface2: #F7F9FA;
+  --light-surface3: #E9EFF1;
+  --light-surface4: #DAE4E7;
+  //dark surfaces
+  --dark-surface1: #000000;
+  --dark-surface2: #171A1C;
+  --dark-surface3: #2E3438;
+  --dark-surface4: #454E54;
+  //Expresive
+  --warning: #F98A11;
+  --danger: #A80824;
+  --success: #22A84D;
+  --info: #0008A8;
+}
+/* 
+ * STYLES ______________________________________________________________________________
+ */
+
+//Fonts
+body {
+  font-size: var(--text-base-size);
+  font-family: var(--font-primary);
+  color: var(--color-text);
+}
+
+h1, h2, h3, h4, form legend {
+  color: var(--color-text-heading);
+  margin-bottom: var(--space-xxs);
+  line-height: var(--heading-line-height);
+}
+
+/* text size */
+.text--xxxl {
+  font-size: var(--text-xxxl);
+}
+
+h1, .text--xxl {
+  font-size: var(--text-xxl);
+}
+
+h2, .text--xl {
+  font-size: var(--text-xl);
+}
+
+h3, .text--lg {
+  font-size: var(--text-lg);
+}
+
+h4, .text--md {
+  font-size: var(--text-md);
+}
+
+.text--sm, small {
+  font-size: var(--text-sm);
+}
+
+.text--xs {
+  font-size: var(--text-xs);
+}
+
+p {
+  line-height: var(--body-line-height);
+}
+
+
+/* 
+ * EXPORT ______________________________________________________________________________
+ */ 
+
+:export  {
+  drawerWidth: $drawer-width;
+  textMd: var(--text-md)
+}

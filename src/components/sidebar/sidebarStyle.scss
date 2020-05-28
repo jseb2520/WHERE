@@ -1,0 +1,36 @@
+@import '../../assets/theme/theme';
+
+.container-sidebar {
+  background-color: #000;
+  width : 180px;
+  position : fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  display : flex;
+  flex-direction: column;
+  margin-left: var(--space-sm);
+  margin-top: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  .container-toggle-panel {
+    padding: var(--space-xs);
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    color :var(--light-text2);
+    &:hover {
+      cursor: pointer;
+    }
+    .icon-toggle-panel {
+      color : var(--light-text2);
+      align-self: flex-end;
+    }
+	}
+	.container-links {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: stretch;
+	}
+}

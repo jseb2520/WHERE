@@ -1,29 +1,54 @@
 {
-  "name": "now-ui-kit-react",
-  "version": "1.0.0",
+  "name": "where",
+  "version": "1.8.0",
+  "description": "",
   "private": true,
+  "main": "dist/index.js",
   "dependencies": {
+    "@ant-design/icons": "^4.1.0",
+    "@babel/register": "^7.9.0",
+    "@material-ui/core": "4.9.1",
+    "@material-ui/icons": "4.9.1",
+    "antd": "^4.2.4",
+    "classnames": "2.2.6",
+    "express": "^4.17.1",
+    "history": "4.10.1",
+    "ignore-styles": "^5.0.1",
     "moment": "2.24.0",
-    "node-sass": "4.12.0",
-    "nouislider": "14.0.2",
-    "react": "16.8.6",
-    "react-bootstrap-switch": "15.5.3",
+    "node-sass": "^4.14.1",
+    "nouislider": "14.1.1",
+    "prop-types": "15.7.2",
+    "react": "16.12.0",
     "react-datetime": "2.16.3",
-    "react-dom": "16.8.6",
-    "react-router": "5.0.1",
-    "react-router-dom": "5.0.1",
-    "react-scripts": "3.0.1",
-    "reactstrap": "8.0.1"
+    "react-dom": "16.12.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.3.1",
+    "react-slick": "0.25.2",
+    "react-spring": "^8.0.27",
+    "react-swipeable-views": "0.13.8"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.8.4",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "eslint-config-prettier": "6.10.0",
+    "eslint-plugin-prettier": "3.1.2",
+    "eslint-plugin-react": "7.18.3",
+    "prettier": "1.19.1"
+  },
+  "optionalDependencies": {
+    "typescript": "3.7.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "lint:check": "eslint . --ext=js,jsx;  exit 0",
+    "lint:fix": "eslint . --ext=js,jsx --fix;  exit 0",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
-    "compile-sass": "node-sass src/assets/scss/now-ui-kit.scss src/assets/css/now-ui-kit.css",
-    "minify-sass": "node-sass src/assets/scss/now-ui-kit.scss src/assets/css/now-ui-kit.min.css --output-style compressed",
-    "map-sass": "node-sass src/assets/scss/now-ui-kit.scss src/assets/css/now-ui-kit.css --source-map true"
+    "ssr": "node server/index.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,8 +64,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "optionalDependencies": {
-    "typescript": "3.5.3"
   }
 }
