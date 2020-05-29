@@ -1,14 +1,10 @@
 @import '../../assets/theme/theme';
 
 .container-content {
+  flex: 20;
   background-color: #FFF;
   padding: var(--space-sm);
-  margin-top: var(--space-sm);
-  margin-bottom: var(--space-sm);
-  margin-right: var(--space-sm);
-  margin-left: 180px;
-  width : 100%;
-  height: 100vh;
+  height: calc(100% - (var(--space-sm) * 2));
   border-radius : var(--border-radius-lg);
   z-index: 100;
 }

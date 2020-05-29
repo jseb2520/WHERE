@@ -2,9 +2,9 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import ContentComponent from './ContentComponent';
 
-export default function ContentContainer({margin, children}) {
+export default function ContentContainer({children}) {
   //Here all methods and state
-	return <ContentComponent margin={margin}>{children}</ContentComponent>;
+	return <ContentComponent>{children}</ContentComponent>;
 }
 
 ContentContainer.defaultProps = {};

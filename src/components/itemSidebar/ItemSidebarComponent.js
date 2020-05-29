@@ -1,5 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom'
 import {animated} from 'react-spring'
 import {
   HomeOutlined,
@@ -14,7 +15,7 @@ import './itemSidebarStyle.scss';
 
 export default function ItemSidebarComponent(props) {
 
-  // let [hover, setHover] = useState(false)
+  console.log('ItemSidebarComponent/props: ', props)
 
   const getIcon = (namePage) => {
     let iconComponent
@@ -48,19 +49,21 @@ export default function ItemSidebarComponent(props) {
     //setHover(!hover)
   }
   return (
-    <a 
-      className = "container-item-sidebar"
-      onMouseEnter = {toggleHover} 
-      onMouseLeave = {toggleHover}
-      href='#pablo'
-    >
-      <div className = "container-item-sidebar-icon">
-        {getIcon(props.namePage)}
-      </div>
-      <div className = "container-item-sidebar-text">
-        <animated.span className = "text" style = {{fontSize: props.fontSize}}>{props.namePage}</animated.span>
-      </div>
-    </a>
+    <Link to= {props.url} className= "link">
+      <animated.div
+        className = "container-item-sidebar"
+        onMouseEnter = {toggleHover} 
+        onMouseLeave = {toggleHover}
+        style= {props.animatedWidth}
+      >
+        <div className = "container-item-sidebar-icon">
+          {getIcon(props.namePage)}
+        </div>
+        <div className = "container-item-sidebar-text">
+          <animated.span className = "text" style = { props.animatedFontSize }>{props.namePage}</animated.span>
+        </div>
+      </animated.div>
+    </Link>
   )
 }
 

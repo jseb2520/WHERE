@@ -1,6 +1,16 @@
 @import "../../assets/theme/theme";
+@import '../../assets/fonts/fonts.scss';
+
+body {
+  font-family: 'Lato-Regular';
+  margin : 0px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+}
 
 .container-main {
-  background-color: #000;
   display: flex;
+  padding: var(--space-sm);
+  height: calc(100vh - (var(--space-sm)*2));
 }
