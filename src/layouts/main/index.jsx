@@ -35,7 +35,8 @@ export default function MainLayout({children}) {
 	};
 
 	let buttonTogglePanel = (
-		<a onClick={togglePanel} className='container-toggle-panel' href='#pablo'>
+		// eslint-disable-next-line jsx-a11y/anchor-is-valid
+		<a onClick={togglePanel} className='container-toggle-panel'>
 			{panel ? (
 				<LeftOutlined className='icon-toggle-panel' />
 			) : (

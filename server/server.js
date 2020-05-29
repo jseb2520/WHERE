@@ -1,34 +1,45 @@
-import Express from 'express'
-import fs from 'fs'
-import path from 'path'
+import express from 'express';
+import path from 'path';
+import serverRenderer from './middleware/renderer';
 
-import React from 'react'
-import ReactDOMServer from 'react-dom/server'
-import HomeContainer from '../src/views/home/HomeContainer'
+const app = express();
 
-const app = Express()
+const PORT = 5000;
 
-const PORT = 8000
+// initialize the application and create the routes
 
-app.use('^/$', (req, res, next)=> {
-  fs.readFile(path.resolve('./build/index.html'), 'utf-8', (error, data) => {
-    if(error){
-      console.log(error)
-      return res.status(500).send('Some error has ocourred')
-    }
-    return res.send(
-      data.replace(
-        '<div id="root"></div>',
-        `<div id="root">
-          ${ReactDOMServer.renderToString(<HomeContainer/>)}
-        </div>` 
-      )
-    )
-  })
-})
+// root (/) should always serve our server rendered page
+app.use('^/$', serverRenderer);
 
-app.use(Express.static(path.resolve(__dirname, '..', 'build')))
+// other static resources should just be served as they are
+app.use(
+	express.static(path.resolve(__dirname, '..', 'build'), {maxAge: '30d'})
+);
 
-app.listen(PORT, ()=> {
-  console.log('App running in the port ' + PORT)
-})
+// app.get('/*', (req, res) => {
+// 	const context = {};
+// 	const app = ReactDOMServer.renderToString(
+// 		<StaticRouter location={req.url} context={context}>
+// 			<App />
+// 		</StaticRouter>
+// 	);
+
+// 	const indexFile = path.resolve('./build/index.html');
+// 	fs.readFile(indexFile, 'utf8', (err, data) => {
+// 		if (err) {
+// 			console.error('Something went wrong:', err);
+// 			return res.status(500).send('Oops, better luck next time!');
+// 		}
+
+// 		return res.send(
+// 			data.replace('<div id="root"></div>', `<div id="root">${app}</div>`)
+// 		);
+// 	});
+// });
+
+app.listen(PORT, '0.0.0.0', (error) => {
+	if (error) {
+		return console.log('something bad happened', error);
+	}
+	console.log(`😎 Server is listening on port ${PORT}`);
+});
