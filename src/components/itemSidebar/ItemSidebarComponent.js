@@ -12,10 +12,6 @@ import {
 
 // import Colors from '../../assets/theme/colors'
 import './itemSidebarStyle.scss';
-
-function ItemSidebarComponent(props) {
-	const {history} = props;
-
 export default function ItemSidebarComponent(props) {
 
   console.log('ItemSidebarComponent/props: ', props)
@@ -79,5 +75,3 @@ ItemSidebarComponent.propTypes = {
 	namePage: PropTypes.string,
 	path: PropTypes.string,
 };
-
-export default withRouter(ItemSidebarComponent);
