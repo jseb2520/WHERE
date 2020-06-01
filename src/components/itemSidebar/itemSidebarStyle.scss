@@ -22,11 +22,15 @@
     }
 
     .container-item-sidebar-icon, .container-item-sidebar-text {
-      color: var(--light-text3);
-      padding: var(--space-xs);
-      transition: all 0.3s ease-out;
-      display: flex;
+      color      : var(--light-text3);
+      padding    : var(--space-xs);
+      transition : all 0.3s ease-out;
+      display    : flex;
       align-items: center;
     };
+
+    @include media(xs) {
+      width: 100%;
+    }
   }
 }

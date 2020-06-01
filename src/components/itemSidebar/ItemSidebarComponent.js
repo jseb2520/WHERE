@@ -9,9 +9,9 @@ import {
   RocketOutlined,
   TeamOutlined,
 } from '@ant-design/icons'
-// import Colors from '../../assets/theme/colors'
 import './itemSidebarStyle.scss';
-
+import Breakpoints from '../../assets/theme/breakpoints'
+import MediaQuery from 'react-responsive'
 
 export default function ItemSidebarComponent(props) {
 
@@ -45,25 +45,49 @@ export default function ItemSidebarComponent(props) {
     return iconComponent
   }
 
+  const ResponsiveContainer = ({children}) => {
+    return(
+      <>
+        <MediaQuery minWidth={Breakpoints.md}>
+          <Link to= {props.url} className= "link">
+            <animated.div
+              className = "container-item-sidebar"
+              onMouseEnter = {toggleHover} 
+              onMouseLeave = {toggleHover}
+              style = {props.animatedWidth}
+            >
+              {children}
+            </animated.div>
+          </Link>
+        </MediaQuery >
+        <MediaQuery maxWidth={Breakpoints.md-1}>
+          <Link to= {props.url} className= "link">
+            <animated.div
+              className = "container-item-sidebar"
+              onMouseEnter = {toggleHover} 
+              onMouseLeave = {toggleHover}
+            >
+              {children}
+            </animated.div>
+          </Link>
+        </MediaQuery>
+      </>
+    )
+  }
+
   const toggleHover = () => {
     //setHover(!hover)
   }
+
   return (
-    <Link to= {props.url} className= "link">
-      <animated.div
-        className = "container-item-sidebar"
-        onMouseEnter = {toggleHover} 
-        onMouseLeave = {toggleHover}
-        style= {props.animatedWidth}
-      >
-        <div className = "container-item-sidebar-icon">
-          {getIcon(props.namePage)}
-        </div>
-        <div className = "container-item-sidebar-text">
-          <animated.span className = "text" style = { props.animatedFontSize }>{props.namePage}</animated.span>
-        </div>
-      </animated.div>
-    </Link>
+    <ResponsiveContainer animatedWidth= {props.animatedWidth}>
+      <div className = "container-item-sidebar-icon">
+        {getIcon(props.namePage)}
+      </div>
+      <div className = "container-item-sidebar-text">
+        <animated.span className = "text" style = { props.animatedFontSize }>{props.namePage}</animated.span>
+      </div>
+    </ResponsiveContainer>
   )
 }
 

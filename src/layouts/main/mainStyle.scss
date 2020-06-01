@@ -13,4 +13,8 @@ body {
   display: flex;
   padding: var(--space-sm);
   height: calc(100vh - (var(--space-sm)*2));
+  @include media(xs) {
+    flex-direction: column;
+    padding: 0px;
+  }
 }

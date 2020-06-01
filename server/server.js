@@ -3,27 +3,41 @@ import fs from 'fs'
 import path from 'path'
 
 import React from 'react'
+import {StaticRouter} from 'react-router-dom'
 import ReactDOMServer from 'react-dom/server'
-import HomeContainer from '../src/views/home/HomeContainer'
+import App from '../src/App'
 
 const app = Express()
 
 const PORT = 8000
 
 app.use('^/$', (req, res, next)=> {
+  const context = {};
   fs.readFile(path.resolve('./build/index.html'), 'utf-8', (error, data) => {
     if(error){
       console.log(error)
       return res.status(500).send('Some error has ocourred')
     }
-    return res.send(
-      data.replace(
-        '<div id="root"></div>',
-        `<div id="root">
-          ${ReactDOMServer.renderToString(<HomeContainer/>)}
-        </div>` 
+
+    if (context.url) {
+      res.writeHead(301, {
+        Location: context.url
+      });
+      res.end();
+    } else{
+      return res.send(
+        data.replace(
+          '<div id="root"></div>',
+          `<div id="root">
+            ${ReactDOMServer.renderToString(
+              <StaticRouter location={req.url} context={context}>
+                <App />
+              </StaticRouter>
+            )}
+          </div>` 
+        )
       )
-    )
+    }
   })
 })
 

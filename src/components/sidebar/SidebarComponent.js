@@ -76,7 +76,7 @@ export default function SidebarComponent(props) {
           <RightOutlined className="icon-toggle-panel" />
         )}
       </a>
-      <div className = "container-links">
+      <div className = "container-links" >
       {
         links.map((link,i) => {
           return (
