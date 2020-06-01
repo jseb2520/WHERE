@@ -1,9 +1,7 @@
 import React, {useState, useRef} from 'react';
 // import PropTypes from 'prop-types';
-import {useSpring, useChain} from 'react-spring';
 import SidebarComponent from '../../components/sidebar/SidebarComponent';
 import ContentContainer from '../../components/content/ContentContainer';
-import {LeftOutlined, RightOutlined} from '@ant-design/icons';
 
 import './mainStyle.scss';
 
@@ -46,16 +44,12 @@ export default function MainLayout({children}) {
 	);
 
 	return (
-		<div className='container-main'>
-			<SidebarComponent
-				width={animatePanel.width}
-				fontSize={animateTextPanel.fontSize}
-				buttonTogglePanel={buttonTogglePanel}
-			/>
-			<ContentContainer margin={animatePanel.marginLeft}>
+		<div className="container-main">
+      <SidebarComponent/>
+			<ContentContainer className= "container-content">
 				{children}
 			</ContentContainer>
-		</div>
+		</div>                                
 	);
 }
 

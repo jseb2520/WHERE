@@ -4,7 +4,7 @@ import {animated} from 'react-spring';
 import './contentStyle.scss';
 
 export default function ContentComponent({margin, children}) {
-	return <animated.div className='container-content' style={{marginLeft: margin}}>{children}</animated.div>;
+	return <animated.div className='container-content'>{children}</animated.div>;
 }
 
 ContentComponent.defaultProps = {};

@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import {withRouter} from 'react-router-dom';
-import {animated} from 'react-spring';
+import React from 'react'
+import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom'
+import {animated} from 'react-spring'
 import {
 	HomeOutlined,
 	ToolOutlined,
@@ -16,7 +16,9 @@ import './itemSidebarStyle.scss';
 function ItemSidebarComponent(props) {
 	const {history} = props;
 
-	// let [hover, setHover] = useState(false)
+export default function ItemSidebarComponent(props) {
+
+  console.log('ItemSidebarComponent/props: ', props)
 
 	const getIcon = (namePage) => {
 		let iconComponent;
@@ -47,27 +49,26 @@ function ItemSidebarComponent(props) {
 		return iconComponent;
 	};
 
-	const toggleHover = () => {
-		//setHover(!hover)
-	};
-	return (
-		// eslint-disable-next-line jsx-a11y/anchor-is-valid
-		<a
-			className='container-item-sidebar'
-			onMouseEnter={toggleHover}
-			onMouseLeave={toggleHover}
-			onClick={() => history.push(props.path)}
-		>
-			<div className='container-item-sidebar-icon'>
-				{getIcon(props.namePage)}
-			</div>
-			<div className='container-item-sidebar-text'>
-				<animated.span className='text' style={{fontSize: props.fontSize}}>
-					{props.namePage}
-				</animated.span>
-			</div>
-		</a>
-	);
+  const toggleHover = () => {
+    //setHover(!hover)
+  }
+  return (
+    <Link to= {props.url} className= "link">
+      <animated.div
+        className = "container-item-sidebar"
+        onMouseEnter = {toggleHover} 
+        onMouseLeave = {toggleHover}
+        style= {props.animatedWidth}
+      >
+        <div className = "container-item-sidebar-icon">
+          {getIcon(props.namePage)}
+        </div>
+        <div className = "container-item-sidebar-text">
+          <animated.span className = "text" style = { props.animatedFontSize }>{props.namePage}</animated.span>
+        </div>
+      </animated.div>
+    </Link>
+  )
 }
 
 ItemSidebarComponent.defaultProps = {

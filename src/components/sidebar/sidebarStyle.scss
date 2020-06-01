@@ -1,29 +1,20 @@
 @import '../../assets/theme/theme';
 
 .container-sidebar {
-	background-color: #000;
-	width: 180px;
-	position: fixed;
-	top: 0px;
-	bottom: 0px;
-	left: 0px;
-	display: flex;
-	flex-direction: column;
-	margin-top: map-get($map: $space, $key: 'space-sm');
-	margin-bottom: map-get($map: $space, $key: 'space-sm');
-
-	.container-toggle-panel {
-		@include headline6;
-		padding: map-get($space, 'space-xs');
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-end;
-		color: map-get($map: $colors, $key: 'white');
-		&:hover {
-			cursor: pointer;
-		}
-		.icon-toggle-panel {
-			color: map-get($map: $colors, $key: white);
+	flex: 1;
+	height: calc(100% - (var(--space-sm) * 2));
+  .container-toggle-panel {
+    padding: var(--space-xs);
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    color :var(--light-text2);
+    &:hover {
+      cursor: pointer;
+    }
+    .icon-toggle-panel {
+      color : var(--light-text2);
+      align-self: flex-end;
     }
 	}
 	.container-links {

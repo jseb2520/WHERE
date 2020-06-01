@@ -1,16 +1,10 @@
 @import '../../assets/theme/theme';
 
 .container-content {
-	background-color: #fff;
-	padding: map-get($map: $space, $key: 'space-sm');
-	margin-top: map-get($map: $space, $key: 'space-sm');
-	margin-bottom: map-get($map: $space, $key: 'space-sm');
-	margin-right: map-get($map: $space, $key: 'space-sm');
-	margin-left: 180px;
-	width: 100%;
-	height: 100vh;
-	border-radius: map-get($map: $dimensions, $key: 'bigBorderRadius');
-	z-index: 100;
-	overflow-x: hidden;
-	overflow-y: auto;
+  flex: 20;
+  background-color: #FFF;
+  padding: var(--space-sm);
+  height: calc(100% - (var(--space-sm) * 2));
+  border-radius : var(--border-radius-lg);
+  z-index: 100;
 }
