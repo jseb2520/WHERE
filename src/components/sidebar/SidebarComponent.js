@@ -6,8 +6,29 @@ import ItemSidebarComponent from '../itemSidebar/ItemSidebarComponent'
 import {useSpring, useChain} from 'react-spring';
 import {LeftOutlined, RightOutlined} from '@ant-design/icons';
 
-
 export default function SidebarComponent(props) {
+	const links = [
+		{
+			namePage: 'Home',
+			path: '/',
+		},
+		{
+			namePage: 'Services',
+			path: '/services',
+		},
+		{
+			namePage: 'Products',
+			path: '/products',
+		},
+		{
+			namePage: 'Projects',
+			path: '/projects',
+		},
+		{
+			namePage: 'About us',
+			path: '/about',
+		},
+	];
 
   const MIN_FONT = 0
   const MAX_FONT = 21
@@ -96,11 +117,6 @@ export default function SidebarComponent(props) {
   )
 }
 
-SidebarComponent.defaultProps = {
-  text: 'Hello World',
-}
+SidebarComponent.defaultProps = {};
 
-SidebarComponent.propTypes = {
-  text : PropTypes.string,
-  number : PropTypes.number
-}
+SidebarComponent.propTypes = {};

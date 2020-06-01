@@ -1,9 +1,10 @@
 {
   "name": "where",
-  "version": "1.8.0",
+  "version": "1.0.4",
   "description": "",
   "private": true,
-  "main": "dist/index.js",
+  "main": "index.js",
+  "homepage": "http://w-here.net",
   "dependencies": {
     "@ant-design/icons": "^4.1.0",
     "@babel/register": "^7.9.0",
@@ -47,7 +48,8 @@
     "eject": "react-scripts eject",
     "lint:check": "eslint . --ext=js,jsx;  exit 0",
     "lint:fix": "eslint . --ext=js,jsx --fix;  exit 0",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install",
+    "pretty": "prettier --single-quote --trailing-comma all --write \"./**/*.{js,jsx,json}\"",
     "ssr": "node server/index.js"
   },
   "eslintConfig": {
