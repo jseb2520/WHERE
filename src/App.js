@@ -6,10 +6,10 @@ import ServicesView from './views/services/ServicesView';
 import AboutView from './views/about/AboutView';
 import ProductsView from './views/products/ProductsView';
 import {Router, Route} from 'react-router';
-import {createBrowserHistory} from 'history';
+import {createMemoryHistory} from 'history';
 
 export default function App() {
-	const history = createBrowserHistory();
+	const history = createMemoryHistory();
 	return (
 		<Router history={history}>
 			<MainLayout>
