@@ -13,9 +13,6 @@ import {
 // import Colors from '../../assets/theme/colors'
 import './itemSidebarStyle.scss';
 export default function ItemSidebarComponent(props) {
-
-  console.log('ItemSidebarComponent/props: ', props)
-
 	const getIcon = (namePage) => {
 		let iconComponent;
 		switch (namePage) {

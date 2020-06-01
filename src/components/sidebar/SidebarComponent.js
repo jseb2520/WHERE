@@ -39,7 +39,6 @@ export default function SidebarComponent(props) {
   )
 
   const togglePanel = () => {
-    console.log('panel hided: ', panel)
     setPanel(!panel)
   }
 
