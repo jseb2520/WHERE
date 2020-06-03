@@ -4,7 +4,7 @@ import serverRenderer from './middleware/renderer';
 
 const app = express();
 
-const PORT = 5000;
+const PORT = 8080;
 
 // initialize the application and create the routes
 
