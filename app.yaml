@@ -1,11 +1,10 @@
-runtime: custom
+runtime: nodejs10
+instance_class: F1
+entrypoint: "npm run ssr"
 env_variables:
   BUCKET_NAME: "webpage-production-bucket"
-env: flex
 resources:
-  memory_gb: 1.0
-manual_scaling:
-  instances: 1
+  memory_gb: 0.6
 handlers:
 - url: /
   static_files: build/index.html
