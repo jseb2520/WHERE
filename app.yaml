@@ -7,9 +7,6 @@ resources:
   memory_gb: 0.6
 handlers:
 - url: /
-  static_files: build/index.html
-  upload: build/index.html
-- url: /
   static_dir: build
   http_headers:
     Access-Control-Allow-Origin: "*"
