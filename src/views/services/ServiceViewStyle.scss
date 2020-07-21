@@ -1,0 +1,58 @@
+@import '../../assets/theme/theme';
+
+.container-content {
+  .container-dimension {
+    background: #000000;
+
+    .cls-1 {
+      fill: none;
+      stroke: #555555;
+      stroke-width: 0.5;
+    }
+
+    .cls-2 {
+      fill: none;
+      stroke: #534008;
+      stroke-width: 2;
+      opacity: 0.3;
+
+      &:hover {
+        fill: none;
+        stroke: #9C7810;
+        stroke-width: 2;
+        opacity: 1;
+      }
+    }
+  }
+  .container-spectral {
+    background: #ffffff;
+    position: relative;
+    .lines{
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      left: 0px;
+    }
+    .selectable-color {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      left: 0px;
+      display: flex;
+      flex-direction: row;
+      .color{
+        height: 600px;
+        width: 16%;
+      }
+    }
+    .svg-lines {
+      width: 100%;
+    }
+    .spectral-line-1 {
+      fill: none;
+      stroke: #e0e0e0;
+      opacity: 1;
+      transition : stroke 1s ease-in-out;
+    }
+  }
+}

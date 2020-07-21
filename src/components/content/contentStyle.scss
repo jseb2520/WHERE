@@ -3,10 +3,11 @@
 .container-content {
   flex: 20;
   background-color: #FFF;
-  padding: var(--space-sm);
-  height: calc(100% - (var(--space-sm) * 2));
+  //padding: var(--space-sm);
+  height: 100%;
   border-radius : var(--border-radius-lg);
   z-index: 100;
+  overflow-y: scroll;
   @include media(xs) {
     flex: 1;
   }

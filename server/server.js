@@ -1,48 +1,45 @@
-import Express from 'express'
-import fs from 'fs'
-import path from 'path'
+import express from 'express';
+import path from 'path';
+import serverRenderer from './middleware/renderer';
 
-import React from 'react'
-import {StaticRouter} from 'react-router-dom'
-import ReactDOMServer from 'react-dom/server'
-import App from '../src/App'
+const app = express();
 
-const app = Express()
+const PORT = 5000;
 
-const PORT = 8000
+// initialize the application and create the routes
 
-app.use('^/$', (req, res, next)=> {
-  const context = {};
-  fs.readFile(path.resolve('./build/index.html'), 'utf-8', (error, data) => {
-    if(error){
-      console.log(error)
-      return res.status(500).send('Some error has ocourred')
-    }
+// root (/) should always serve our server rendered page
+app.use('^/$', serverRenderer);
 
-    if (context.url) {
-      res.writeHead(301, {
-        Location: context.url
-      });
-      res.end();
-    } else{
-      return res.send(
-        data.replace(
-          '<div id="root"></div>',
-          `<div id="root">
-            ${ReactDOMServer.renderToString(
-              <StaticRouter location={req.url} context={context}>
-                <App />
-              </StaticRouter>
-            )}
-          </div>` 
-        )
-      )
-    }
-  })
-})
+// other static resources should just be served as they are
+app.use(
+	express.static(path.resolve(__dirname, '..', 'build'), {maxAge: '30d'})
+);
 
-app.use(Express.static(path.resolve(__dirname, '..', 'build')))
+// app.get('/*', (req, res) => {
+// 	const context = {};
+// 	const app = ReactDOMServer.renderToString(
+// 		<StaticRouter location={req.url} context={context}>
+// 			<App />
+// 		</StaticRouter>
+// 	);
 
-app.listen(PORT, ()=> {
-  console.log('App running in the port ' + PORT)
-})
+// 	const indexFile = path.resolve('./build/index.html');
+// 	fs.readFile(indexFile, 'utf8', (err, data) => {
+// 		if (err) {
+// 			console.error('Something went wrong:', err);
+// 			return res.status(500).send('Oops, better luck next time!');
+// 		}
+
+// 		return res.send(
+// 			data.replace('<div id="root"></div>', `<div id="root">${app}</div>`)
+// 		);
+// 	});
+// });
+
+app.listen(PORT, '0.0.0.0', (error) => {
+	if (error) {
+		return console.log('something bad happened', error);
+	}
+	console.log(`😎 Server is listening on port ${PORT}`);
+});

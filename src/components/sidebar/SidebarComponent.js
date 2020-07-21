@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {useState, useRef} from 'react';
 import PropTypes from 'prop-types';
 import {animated} from 'react-spring'
@@ -6,9 +7,7 @@ import ItemSidebarComponent from '../itemSidebar/ItemSidebarComponent'
 import {useSpring, useChain} from 'react-spring';
 import {LeftOutlined, RightOutlined} from '@ant-design/icons';
 
-
 export default function SidebarComponent(props) {
-
   const MIN_FONT = 0
   const MAX_FONT = 21
   const MAX_WIDTH_PANEL = 180
@@ -69,7 +68,7 @@ export default function SidebarComponent(props) {
 
   return (
     <animated.div className='container-sidebar'>
-      <a onClick={togglePanel} className="container-toggle-panel" href="#pablo">
+      <a onClick={togglePanel} className="container-toggle-panel">
         {panel ? (
           <LeftOutlined className="icon-toggle-panel" />
         ) : (
@@ -96,11 +95,6 @@ export default function SidebarComponent(props) {
   )
 }
 
-SidebarComponent.defaultProps = {
-  text: 'Hello World',
-}
+SidebarComponent.defaultProps = {};
 
-SidebarComponent.propTypes = {
-  text : PropTypes.string,
-  number : PropTypes.number
-}
+SidebarComponent.propTypes = {};

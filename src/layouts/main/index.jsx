@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React from 'react';
 // import PropTypes from 'prop-types';
 import SidebarComponent from '../../components/sidebar/SidebarComponent';
 import ContentContainer from '../../components/content/ContentContainer';
@@ -6,7 +6,6 @@ import ContentContainer from '../../components/content/ContentContainer';
 import './mainStyle.scss';
 
 export default function MainLayout({children}) {
-
 	return (
 		<div className="container-main">
       <SidebarComponent/>
