@@ -4,11 +4,12 @@ import {Link} from 'react-router-dom'
 import {animated} from 'react-spring'
 import {
 	HomeOutlined,
-	ToolOutlined,
+	BulbOutlined,
 	ShoppingOutlined,
 	RocketOutlined,
 	TeamOutlined,
 } from '@ant-design/icons';
+import {ReactComponent as ResearchIcon} from '../../assets/img/research_icon.svg'
 
 // import Colors from '../../assets/theme/colors'
 import './itemSidebarStyle.scss';
@@ -21,7 +22,7 @@ export default function ItemSidebarComponent(props) {
 				break;
 			}
 			case 'Services': {
-				iconComponent = <ToolOutlined className='icon-item-sidebar' />;
+				iconComponent = <BulbOutlined className='icon-item-sidebar' />;
 				break;
 			}
 			case 'Products': {
@@ -34,6 +35,10 @@ export default function ItemSidebarComponent(props) {
 			}
 			case 'About us': {
 				iconComponent = <TeamOutlined className='icon-item-sidebar' />;
+				break;
+			}
+			case 'Research': {
+				iconComponent = <ResearchIcon className='icon-item-sidebar' />;
 				break;
 			}
 			default:

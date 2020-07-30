@@ -1,9 +1,13 @@
 import React from 'react';
+// import PageHeader from '../../components/pageHeader/PageHeader';
+// import image1 from '../../assets/img/header-parallax.jpg';
 
 const ServicesView = () => {
-    return (
-        <h1>Hello from Services</h1>
-    );
-}
+	return (
+		<div className='services-container'>
+			{/* <PageHeader src={image1} /> */}
+		</div>
+	);
+};
 
 export default ServicesView;

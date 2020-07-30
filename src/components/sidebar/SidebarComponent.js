@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, {useState, useRef} from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import {animated} from 'react-spring'
 import './sidebarStyle.scss';
 import ItemSidebarComponent from '../itemSidebar/ItemSidebarComponent'
@@ -15,7 +15,7 @@ export default function SidebarComponent(props) {
   const ANIMATE_TEXT_DURATION = 250
   const ANIMATE_PANEL_DURATION = 150
 
-  let [panel, setPanel] = useState(true)
+  let [panel, setPanel] = useState(false)
   const $animatePanelRef = useRef()
   const animatedWidth= useSpring({ 
     config: { duration: ANIMATE_PANEL_DURATION, ease: 'expOut' },
@@ -62,6 +62,10 @@ export default function SidebarComponent(props) {
     {
       namePage : 'About us',
       url: '/about'
+    },
+    {
+      namePage: 'Research',
+      url: '/research'
     }
   ]
 

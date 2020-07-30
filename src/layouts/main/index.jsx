@@ -7,12 +7,12 @@ import './mainStyle.scss';
 
 export default function MainLayout({children}) {
 	return (
-		<div className="container-main">
-      <SidebarComponent/>
-			<ContentContainer className= "container-content">
+		<div className='container-main'>
+			<SidebarComponent />
+			<ContentContainer className='container-content'>
 				{children}
 			</ContentContainer>
-		</div>                                
+		</div>
 	);
 }
 
