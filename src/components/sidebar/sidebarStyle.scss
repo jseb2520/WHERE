@@ -2,7 +2,8 @@
 
 .container-sidebar {
 	flex: 1;
-	height: calc(100% - (var(--space-sm) * 2));
+  height: calc(100% - (var(--space-sm) * 2));
+  z-index: 100000;
   .container-toggle-panel {
     padding: var(--space-xs);
     display: flex;
